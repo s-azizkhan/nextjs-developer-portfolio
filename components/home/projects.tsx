@@ -1,8 +1,9 @@
 import Link from "next/link";
-import { Card, CardContent, CardHeader } from "../ui/card";
+import { Card, CardContent, CardFooter, CardHeader } from "../ui/card";
 import { Image } from "@nextui-org/react";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import { HiEye } from "react-icons/hi2";
+import { Badge } from "../ui/badge";
 
 interface ProjectInterface {
     title: string;
@@ -10,6 +11,7 @@ interface ProjectInterface {
     image: string;
     previewLink?: string;
     githubLink?: string;
+    techStack?: string[]; // New property for tech stack
 }
 
 const ProjectCard = (project: ProjectInterface) => {
@@ -22,7 +24,7 @@ const ProjectCard = (project: ProjectInterface) => {
                             src={project.image}
                             width="550"
                             height="310"
-                            alt="Project 1"
+                            alt={project.title}
                             className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
                         />
                     }
@@ -33,34 +35,48 @@ const ProjectCard = (project: ProjectInterface) => {
                         <p className="text-muted-foreground">
                             {project.description}
                         </p>
-                        <div className="flex gap-2">
-                            {project.previewLink &&
-                                <Link
-                                    href={project.previewLink}
-                                    className="inline-flex h-8 items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-                                    prefetch={false}
-                                >
-                                    Live Demo
-                                    <HiEye className="ml-2" />
-                                </Link>
-                            }
-                            {project.githubLink && <Link
-                                href={project.githubLink}
-                                className="inline-flex h-8 items-center justify-center rounded-md border border-input bg-background px-4 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-                                prefetch={false}
-                            >
-                                GitHub
-                                <GitHubLogoIcon className="ml-2" />
+                        {project.techStack && (
+                            <div className="flex flex-wrap gap-2 mt-2">
+                                {project.techStack.map((tech, index) => (
+                                    //<span key={index} className="inline-flex items-center justify-center rounded-md bg-secondary px-3 py-1 text-sm font-medium text-secondary-foreground">
+                                    //    {tech}
+                                    //</span>
 
-                            </Link>
-                            }
-                        </div>
+                                    <Badge key={index}>{tech}</Badge>
+                                ))}
+                            </div>
+                        )}
                     </div>
                 </CardContent>
+                <CardFooter>
+                    <div className="flex gap-2 mt-4">
+                        {project.previewLink &&
+                            <Link
+                                href={project.previewLink}
+                                className="inline-flex h-8 items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                                prefetch={false}
+                            >
+                                Live Demo
+                                <HiEye className="ml-2" />
+                            </Link>
+                        }
+                        {project.githubLink && <Link
+                            href={project.githubLink}
+                            className="inline-flex h-8 items-center justify-center rounded-md border border-input bg-background px-4 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                            prefetch={false}
+                        >
+                            GitHub
+                            <GitHubLogoIcon className="ml-2" />
+
+                        </Link>
+                        }
+                    </div>
+                </CardFooter>
             </Card>
         </>
     )
 }
+
 export default function Projects() {
     const projects: ProjectInterface[] = [
         {
@@ -69,23 +85,27 @@ export default function Projects() {
             image: "/1.png",
             previewLink: "/",
             githubLink: "/",
+            techStack: ["React", "Next.js", "Node.js", "MongoDB", "Express.js", 'AWS']
         },
         {
             title: "Project 2",
             description: "A web application that helps users manage their tasks and projects.",
             image: "/2.jpg",
             githubLink: "/",
+            techStack: ["Vue", "Nuxt.js", "Firebase"]
         },
         {
             title: "Project 3",
             description: "A web application that helps users manage their tasks and projects.",
             image: "/3.jpg",
             previewLink: "/",
+            techStack: ["Angular", "NestJS", "MongoDB"]
         },
         {
             title: "Project 4",
             description: "A web application that helps users manage their tasks and projects.",
             image: "/aziz-avatar.jpeg",
+            techStack: ["Svelte", "Sapper", "GraphQL"]
         }
     ];
 
@@ -110,6 +130,7 @@ export default function Projects() {
                                 image={project.image}
                                 previewLink={project.previewLink}
                                 githubLink={project.githubLink}
+                                techStack={project.techStack}
                             />
                         ))}
                     </div>
