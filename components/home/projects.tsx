@@ -16,66 +16,64 @@ interface ProjectInterface {
 
 const ProjectCard = (project: ProjectInterface) => {
     return (
-        <>
-            <Card>
-                <CardHeader>
-                    {project.image &&
-                        <Image
-                            src={project.image}
-                            width="550"
-                            height="310"
-                            alt={project.title}
-                            className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
-                        />
-                    }
-                </CardHeader>
-                <CardContent>
-                    <div className="space-y-2">
-                        <h3 className="text-xl font-bold">{project.title}</h3>
-                        <p className="text-muted-foreground">
-                            {project.description}
-                        </p>
-                        {project.techStack && (
-                            <div className="flex flex-wrap gap-2 mt-2">
-                                {project.techStack.map((tech, index) => (
-                                    //<span key={index} className="inline-flex items-center justify-center rounded-md bg-secondary px-3 py-1 text-sm font-medium text-secondary-foreground">
-                                    //    {tech}
-                                    //</span>
+        <Card className="flex flex-col justify-between h-fit">
+            <CardHeader>
+                {project.image &&
+                    <Image
+                        src={project.image}
+                        width="550"
+                        height="310"
+                        alt={project.title}
+                        className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
+                    />
+                }
+            </CardHeader>
+            <CardContent className="flex-grow">
+                <div className="space-y-2">
+                    <h3 className="text-xl font-bold">{project.title}</h3>
+                    <p className="text-muted-foreground">
+                        {project.description}
+                    </p>
 
-                                    <Badge key={index}>{tech}</Badge>
-                                ))}
-                            </div>
-                        )}
+                </div>
+                {project.techStack && (
+                    <div className="tech-stack">
+                        <h4 className="text-xl font-bold mt-4">Tech Stack</h4>
+                        <div className="flex flex-wrap gap-2 mt-2">
+                            {project.techStack.map((tech, index) => (
+                                <Badge key={index}>{tech}</Badge>
+                            ))}
+                        </div>
                     </div>
-                </CardContent>
-                <CardFooter>
-                    <div className="flex gap-2 mt-4">
-                        {project.previewLink &&
-                            <Link
-                                href={project.previewLink}
-                                className="inline-flex h-8 items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-                                prefetch={false}
-                            >
-                                Live Demo
-                                <HiEye className="ml-2" />
-                            </Link>
-                        }
-                        {project.githubLink && <Link
+                )}
+            </CardContent>
+            <CardFooter>
+                <div className="flex gap-2">
+                    {project.previewLink &&
+                        <Link
+                            href={project.previewLink}
+                            className="inline-flex h-8 items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                            prefetch={false}
+                        >
+                            Live Demo
+                            <HiEye className="ml-2" />
+                        </Link>
+                    }
+                    {project.githubLink &&
+                        <Link
                             href={project.githubLink}
                             className="inline-flex h-8 items-center justify-center rounded-md border border-input bg-background px-4 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
                             prefetch={false}
                         >
                             GitHub
                             <GitHubLogoIcon className="ml-2" />
-
                         </Link>
-                        }
-                    </div>
-                </CardFooter>
-            </Card>
-        </>
-    )
-}
+                    }
+                </div>
+            </CardFooter>
+        </Card>
+    );
+};
 
 export default function Projects() {
     const projects: ProjectInterface[] = [
@@ -105,6 +103,12 @@ export default function Projects() {
             title: "Project 4",
             description: "A web application that helps users manage their tasks and projects.",
             image: "/aziz-avatar.jpeg",
+            techStack: ["Svelte", "Sapper", "GraphQL"]
+        },
+        {
+            title: "Project 5",
+            description: "A web application that helps users manage their tasks and projects.",
+            image: "/placeholder.svg",
             techStack: ["Svelte", "Sapper", "GraphQL"]
         }
     ];
