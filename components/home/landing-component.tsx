@@ -65,13 +65,13 @@ export function LandingComponent() {
                 width={550}
                 src="/aziz-avatar.jpeg"
                 alt="NextUI Album Cover"
-                 className=" m-5 mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full lg:order-last lg:aspect-square"
+                className=" m-5 mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full lg:order-last lg:aspect-square"
               />
             </div>
           </div>
         </section>
 
-       <Projects />
+        <Projects />
 
         <section className="py-12 md:py-24 bg-muted">
           <div className="container">
