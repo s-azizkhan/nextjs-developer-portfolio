@@ -20,6 +20,7 @@ import { Button } from "@/components/ui/button"
 import { Image } from "@nextui-org/react";
 import { ModeToggle } from "../mode-toggle"
 import Projects from "./projects"
+import Skills from "./skills"
 
 export function LandingComponent() {
   return (
@@ -73,49 +74,8 @@ export function LandingComponent() {
 
         <Projects />
 
-        <section className="py-12 md:py-24 bg-muted">
-          <div className="container">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8">Skills</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-              <div className="bg-background p-4 rounded-lg">
-                <h3 className="text-lg font-semibold mb-2">Frontend</h3>
-                <ul className="space-y-2">
-                  <li>React</li>
-                  <li>JavaScript</li>
-                  <li>HTML/CSS</li>
-                  <li>TypeScript</li>
-                </ul>
-              </div>
-              <div className="bg-background p-4 rounded-lg">
-                <h3 className="text-lg font-semibold mb-2">Backend</h3>
-                <ul className="space-y-2">
-                  <li>Node.js</li>
-                  <li>Express</li>
-                  <li>MongoDB</li>
-                  <li>PostgreSQL</li>
-                </ul>
-              </div>
-              <div className="bg-background p-4 rounded-lg">
-                <h3 className="text-lg font-semibold mb-2">Tools</h3>
-                <ul className="space-y-2">
-                  <li>Git</li>
-                  <li>GitHub</li>
-                  <li>Figma</li>
-                  <li>Postman</li>
-                </ul>
-              </div>
-              <div className="bg-background p-4 rounded-lg">
-                <h3 className="text-lg font-semibold mb-2">Frameworks</h3>
-                <ul className="space-y-2">
-                  <li>Next.js</li>
-                  <li>Tailwind CSS</li>
-                  <li>Prisma</li>
-                  <li>Jest</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
+       <Skills />
+
         <section id="tech-stack" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
