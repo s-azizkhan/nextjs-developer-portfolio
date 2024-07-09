@@ -16,7 +16,7 @@ export default function Skills() {
                 </div>
                 <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 sm:grid-cols-2 lg:grid-cols-3 lg:gap-12">
 
-                    <Card className="bg-muted text-white">
+                    <Card className="bg-muted dark:text-white">
                         <CardHeader className="flex items-center">
                             <FaReact className="text-2xl mr-2" />
                             <h3 className="text-lg font-semibold">Frontend</h3>
@@ -31,7 +31,7 @@ export default function Skills() {
                         </CardBody>
                     </Card>
 
-                    <Card className="bg-muted text-white">
+                    <Card className="bg-muted dark:text-white">
                         <CardHeader className="flex items-center">
                             <FaNodeJs className="text-2xl mr-2" />
                             <h3 className="text-lg font-semibold">Backend</h3>
@@ -46,7 +46,7 @@ export default function Skills() {
                         </CardBody>
                     </Card>
 
-                    <Card className="bg-muted text-white">
+                    <Card className="bg-muted dark:text-white">
                         <CardHeader className="flex items-center">
                             <SiFramework className="text-2xl mr-2" />
                             <h3 className="text-lg font-semibold">Frameworks</h3>
@@ -61,7 +61,7 @@ export default function Skills() {
                         </CardBody>
                     </Card>
 
-                    <Card className="bg-muted text-white">
+                    <Card className="bg-muted dark:text-white">
                         <CardHeader className="flex items-center">
                             <FaTools className="text-2xl mr-2" />
                             <h3 className="text-lg font-semibold">Tools</h3>
