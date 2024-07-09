@@ -21,6 +21,7 @@ import { Image } from "@nextui-org/react";
 import { ModeToggle } from "../mode-toggle"
 import Projects from "./projects"
 import Skills from "./skills"
+import Contact from "./contact"
 
 export function LandingComponent() {
   return (
@@ -74,9 +75,9 @@ export function LandingComponent() {
 
         <Projects />
 
-       <Skills />
+        <Skills />
 
-        <section id="tech-stack" className="w-full py-12 md:py-24 lg:py-32">
+        <section id="tech-stack" className="w-full py-12 md:py-24 lg:py-32 bg-muted hidden">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -122,30 +123,8 @@ export function LandingComponent() {
             </div>
           </div>
         </section>
-        <section id="contact" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Get in Touch</h2>
-                <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  {`Have a project in mind or just want to say hello? Fill out the form below and I'll get back to you as
-                  soon as possible.`}
 
-                </p>
-              </div>
-            </div>
-            <div className="container">
-              <form className="max-w-md mx-auto space-y-4">
-                <Input type="text" placeholder="Name" className="w-full" />
-                <Input type="email" placeholder="Email" className="w-full" />
-                <Textarea placeholder="Message" className="w-full" />
-                <Button type="submit" className="w-full">
-                  Send Message
-                </Button>
-              </form>
-            </div>
-          </div>
-        </section>
+        <Contact />
       </main>
       <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
         <p className="text-xs text-muted-foreground">&copy; 2024 John Doe. All rights reserved.</p>
