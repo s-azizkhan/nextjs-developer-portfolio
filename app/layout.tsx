@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils'
 import './globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
 import { NextUIProvider } from '@nextui-org/react'
+import { Metadata } from 'next'
 
 const fontHeading = Manrope({
   subsets: ['latin'],
@@ -18,6 +19,10 @@ const fontBody = Manrope({
   variable: '--font-body',
 })
 
+export const metadata: Metadata = {
+  title: "S.Aziz Khan - Portfolio",
+  description: "Portfolio of S.Aziz Khan",
+};
 export default function RootLayout({
   children,
 }: Readonly<{
