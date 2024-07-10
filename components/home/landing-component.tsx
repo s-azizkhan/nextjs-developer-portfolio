@@ -12,12 +12,6 @@ To read more about using these font, please visit the Next.js documentation:
 - Pages Directory: https://nextjs.org/docs/pages/building-your-application/optimizing/fonts
 **/
 import Link from "next/link"
-import { Card, CardHeader, CardContent } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Button } from "@/components/ui/button"
-//import Image from "next/image"
-import { Image } from "@nextui-org/react";
 import { ModeToggle } from "../mode-toggle"
 import Projects from "./projects"
 import Skills from "./skills"
