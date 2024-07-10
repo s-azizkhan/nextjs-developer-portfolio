@@ -5,7 +5,7 @@ export default function Hero() {
     const words = ["innovative", "scalable", "user-friendly", "efficient", "secure", "reliable", "seamless", "interactive", "robust", "versatile", "intuitive", "performant"];
     return (
         <>
-            <section id="hero" className="py-12 md:py-24 mx-4 w-full rounded-t-lg">
+            <section id="hero" className="py-12 md:py-24 mx-4 rounded-t-lg">
                 <div className="container px-4 md:px-6">
                     <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-8 xl:grid-cols-[1fr_600px] items-center">
                         <div className="flex flex-col justify-center space-y-6">
