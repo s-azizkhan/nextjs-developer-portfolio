@@ -1,4 +1,5 @@
 # Next.js Developer Portfolio
+![image](https://github.com/user-attachments/assets/086ba0ed-4e0d-44c6-aefd-16fe3ed4eb5e)
 
 This is a developer portfolio project built with Next.js, React, Tailwind CSS, Shadcn, NextUI, Framer Motion, and React Icons. This project serves as a personal portfolio to showcase your skills, projects, and contact information.
 
